@@ -1,1 +1,1 @@
-# 2. Static Type System
+# Static Type System

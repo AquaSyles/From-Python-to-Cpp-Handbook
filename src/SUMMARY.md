@@ -6,7 +6,7 @@
 # Handbook - From Python to C++
 
 - [Syntax Differences](syntax_differences.md)
-- [Static Type System](static_type_system.md)
+- [Static Typing](static_typing.md)
 - [Memory Management](memory_management.md)
 - [Object-Oriented Programming (OOP)](oop.md)
 - [Standard Template Library (STL)](stl.md)
