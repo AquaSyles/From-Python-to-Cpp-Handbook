@@ -16,7 +16,8 @@ The "From Python to C++" handbook is a comprehensive guide designed for Python d
     - [3.1 Dynamic Memory Allocation](memory_management.html#31-dynamic-memory-allocation)
     - [3.2 Smart Pointers](memory_management.html#32-smart-pointers)
     - [3.3 RAII (Resource Acquisition Is Initialization)](memory_management.html#33-raii-resource-acquisition-is-initialization)
-    - [3.4 Memory Safety and Rust Comparison (Optional)](memory_management.html#34-memory-safety-and-rust-comparison-optional)
+    - [3.4 Stack vs Heap memory allocation](memory_management.html#34-stack-vs-heap-memory-allocation)
+    - [3.5 Memory Safety and Rust Comparison (Optional)](memory_management.html#35-memory-safety-and-rust-comparison-optional)
 - [4. Object-Oriented Programming (OOP)](oop.md)
 - [5. Standard Template Library (STL)](stl.md)
 - [6. Error Handling](error_handling.md)
@@ -42,7 +43,7 @@ The "From Python to C++" handbook is a comprehensive guide designed for Python d
 ## 4. Object-Oriented Programming (OOP)
 - Learn fundamental OOP concepts in C++, including classes, constructors, inheritance, and polymorphism.
 
-## 5. Standard Template Library (STL) ??? STD???
+## 5. Standard Template Library (STL)
 - Uncover the power of STL, C++'s standard library, and its pre-defined classes and functions for handling complex data structures and algorithms.
 
 ## 6. Error Handling ???

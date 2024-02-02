@@ -47,7 +47,20 @@ public:
 ```
 Objects like ResourceHolder ensure proper resource management, preventing memory leaks by adhering to the RAII principle.
 
-## 3.4 Memory Safety and Rust Comparison (Optional)
+## 3.4 Stack vs Heap memory allocation
+- Stack allocation:
+    - Involves storing variables in a region of memory known as the stack, providing automatic and fast memory management.
+    - Uses a single CPU instruction, making it very fast.
+    - Suitable for small, short-lived variables with known sizes.
+    - Efficient and automatically manages memory.
+
+- Heap allocation:
+    - Involves dynamic memory allocation from a more flexible, but manual, memory space known as the heap.
+    - Uses many CPU instructions to construct an object.
+    - Suitable for larger data structures or objects with unknown or longer lifespans.
+    - Provides flexibility but requires careful handling to avoid memory leaks and fragmentation.
+
+## 3.5 Memory Safety and Rust Comparison (Optional)
 For developers seeking enhanced memory safety, a brief comparison with Rust's ownership model can be insightful. Rust's borrow checker enforces strict ownership rules, eliminating many common memory-related bugs, though at the cost of added complexity.
 
 ```rust
