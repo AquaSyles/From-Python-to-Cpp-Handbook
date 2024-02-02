@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Object-Oriented Programming (OOP) - Guide book</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="description.html">Description</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook - From Python to C++</li><li class="chapter-item expanded "><a href="syntax_differences.html"><strong aria-hidden="true">1.</strong> Syntax Differences</a></li><li class="chapter-item expanded "><a href="static_typing.html"><strong aria-hidden="true">2.</strong> Static Typing</a></li><li class="chapter-item expanded "><a href="memory_management.html"><strong aria-hidden="true">3.</strong> Memory Management</a></li><li class="chapter-item expanded "><a href="oop.html" class="active"><strong aria-hidden="true">4.</strong> Object-Oriented Programming (OOP)</a></li><li class="chapter-item expanded "><a href="stl.html"><strong aria-hidden="true">5.</strong> Standard Template Library (STL)</a></li><li class="chapter-item expanded "><a href="error_handling.html"><strong aria-hidden="true">6.</strong> Error Handling</a></li><li class="chapter-item expanded "><a href="compilation_and_linking.html"><strong aria-hidden="true">7.</strong> Compilation and Linking</a></li><li class="chapter-item expanded "><a href="dll_files.html"><strong aria-hidden="true">8.</strong> DLL Files (Windows)</a></li><li class="chapter-item expanded "><a href="cpu_architectures.html"><strong aria-hidden="true">9.</strong> Compilation for Different CPU Architectures</a></li><li class="chapter-item expanded "><a href="performance.html"><strong aria-hidden="true">10.</strong> Performance</a></li><li class="chapter-item expanded "><a href="different_ways.html"><strong aria-hidden="true">11.</strong> Different Ways of Doing Things</a></li><li class="chapter-item expanded "><a href="cheat_sheet.html"><strong aria-hidden="true">12.</strong> Cheat Sheet</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Guide book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="4-object-oriented-programming-oop"><a class="header" href="#4-object-oriented-programming-oop">4. Object-Oriented Programming (OOP)</a></h1>
+<p>Object-Oriented Programming (OOP) is a fundamental programming paradigm that is employed in both Python and C++, but the implementation details vary between the two languages. Understanding the principles of OOP in C++ is crucial for Python developers transitioning to this language. Let's delve into the key concepts of OOP in C++ and highlight the differences and similarities with Python.</p>
+<h2 id="41-classes-and-objects"><a class="header" href="#41-classes-and-objects">4.1 Classes and Objects</a></h2>
+<p>In C++, like in Python, the cornerstone of OOP is the concept of classes and objects. Classes act as blueprints for objects, defining their properties (data members) and behaviors (member functions). Here's an example of a simple class in C++:</p>
+<pre><code class="language-cpp">// C++ Class Definition
+class Rectangle {
+public:
+    int width;
+    int height;
+
+    // Member function to calculate area
+    int calculateArea() {
+        return width * height;
+    }
+};
+
+// Creating an object of the class
+Rectangle myRectangle;
+myRectangle.width = 5;
+myRectangle.height = 10;
+int area = myRectangle.calculateArea();
+</code></pre>
+<p>In this example, a Rectangle class is defined with width and height as data members and a member function calculateArea to compute the area. An object myRectangle is then created, and its members are accessed and modified.</p>
+<h2 id="42-constructors-and-destructors"><a class="header" href="#42-constructors-and-destructors">4.2 Constructors and Destructors</a></h2>
+<p>C++ introduces the concept of constructors and destructors, which Python also supports. Constructors are special member functions responsible for initializing an object's state when it is created. Destructors, on the other hand, are used to clean up resources when an object is destroyed. Here's an example:</p>
+<pre><code class="language-cpp">class MyClass {
+public:
+    // Constructor
+    MyClass() {
+        // Initialization code
+    }
+
+    // Destructor
+    ~MyClass() {
+        // Cleanup code
+    }
+};
+</code></pre>
+<p>In Python, the <strong>init</strong> method serves as the constructor, and the <strong>del</strong> method can be used for cleanup, though it may not be as deterministic as C++ destructors.</p>
+<h2 id="43-inheritance"><a class="header" href="#43-inheritance">4.3 Inheritance</a></h2>
+<p>Both Python and C++ support inheritance, allowing a class to inherit properties and behaviors from another class. In C++, the : public syntax is used to denote inheritance. Here's a brief example:</p>
+<pre><code class="language-cpp">// Base class
+class Shape {
+public:
+    virtual void draw() {
+        // Draw the shape
+    }
+};
+
+// Derived class
+class Circle : public Shape {
+public:
+    void draw() override {
+        // Draw the circle
+    }
+};
+</code></pre>
+<p>In this example, Circle is a derived class that inherits from the base class Shape. The override keyword is used to indicate that the draw function in the derived class overrides the one in the base class.</p>
+<h2 id="44-polymorphism"><a class="header" href="#44-polymorphism">4.4 Polymorphism</a></h2>
+<p>Polymorphism allows objects of different types to be treated as objects of a common base type. C++ supports polymorphism through virtual functions and pointers. Here's a simplified example:</p>
+<pre><code class="language-cpp">// Base class with a virtual function
+class Animal {
+public:
+    virtual void makeSound() {
+        // Base class implementation
+    }
+};
+
+// Derived classes
+class Dog : public Animal {
+public:
+    void makeSound() override {
+        // Dog's implementation
+    }
+};
+
+class Cat : public Animal {
+public:
+    void makeSound() override {
+        // Cat's implementation
+    }
+};
+
+// Using polymorphism
+Animal* myAnimal = new Dog();
+myAnimal-&gt;makeSound();  // Calls Dog's implementation
+delete myAnimal;
+</code></pre>
+<p>In C++, the &quot;virtual&quot; keyword is used to indicate that a function can be overridden in a derived class. This is part of a concept called polymorphism. Polymorphism allows a program to treat objects of different classes in a unified way. So, when you use &quot;virtual,&quot; it enables dynamic dispatch, letting the program decide at runtime which version of a function to use based on the actual type of the object, contributing to the flexibility and polymorphic behavior in your code.</p>
+<h2 id="45-differences-and-similarities-with-python"><a class="header" href="#45-differences-and-similarities-with-python">4.5 Differences and Similarities with Python</a></h2>
+<p>While the core principles of OOP are similar in both Python and C++, there are notable differences:</p>
+<p>Access Modifiers: C++ introduces access modifiers (public, private, protected) for class members, providing more control over encapsulation.</p>
+<p>Static Binding: C++ uses static binding for non-virtual functions, meaning the function to be called is determined at compile-time. In Python, all methods are essentially virtual, and dynamic dispatch is used.</p>
+<p>In conclusion, Object-Oriented Programming (OOP) is crucial in both Python and C++, with shared principles like classes and polymorphism. Differences, such as access modifiers in C++, exist, but overall, OOP promotes code organization and modularity across languages.</p>
+<h2 id="46-the-diamond-problem-optional"><a class="header" href="#46-the-diamond-problem-optional">4.6 The Diamond Problem (Optional)</a></h2>
+<p>The &quot;diamond problem&quot; in programming happens when a class inherits from two classes that share a common ancestor, leading to ambiguity. C++ uses &quot;virtual inheritance,&quot; and Python uses &quot;Method Resolution Order&quot; (MRO) to address and prevent conflicts in multiple inheritance situations.</p>
+<p>C++:</p>
+<ul>
+<li>C++ tackles the diamond problem through &quot;virtual inheritance.&quot; By utilizing the virtual keyword and employing a mechanism known as a &quot;virtual table&quot; (vtable), a shared instance of the common base class is created among derived classes. The virtual table maintains a mapping of function pointers, allowing the compiler to determine the correct function to call at runtime, thus eliminating ambiguity in the presence of multiple inheritance.</li>
+</ul>
+<pre><code class="language-cpp">class Animal {
+public:
+    void eat() {
+        // common implementation
+    }
+};
+
+class Mammal : public virtual Animal {
+    // ...
+};
+
+class Bird : public virtual Animal {
+    // ...
+};
+
+class Bat : public Mammal, public Bird {
+    // ...
+};
+</code></pre>
+<p>Python:</p>
+<ul>
+<li>Python handles the diamond problem using the &quot;Method Resolution Order&quot; (MRO). The order of base classes in the class definition determines the MRO, resolving ambiguity in multiple inheritance.</li>
+</ul>
+<pre><code class="language-python">class Animal:
+    def eat(self):
+        # common implementation
+        pass
+
+class Mammal(Animal):
+    # ...
+
+class Bird(Animal):
+    # ...
+
+class Bat(Mammal, Bird):
+    # ...
+</code></pre>
+<p>In both languages, these mechanisms ensure a systematic approach to multiple inheritance, preventing conflicts and maintaining code clarity.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="memory_management.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="stl.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="memory_management.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="stl.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
