@@ -13,10 +13,10 @@ You are now facing the challenge of migrating from Python to C++. This assignmen
     - Familiarize yourself with variable declaration, function definition, and general code style in C++.
     - Also, briefly refer to the best code style in Python [PEP 8](https://peps.python.org/pep-0008/).
 
-2. **Static Type System**
+2. **Static Typing**
     - In Python, you can declare a variable like `x = 10`. In C++, you must be more specific about the variable type to be declared. Explain the static typing approach in C++ and how to declare variable types upon creation.
-    - Note: This does not refer to the "static" keyword in declaration but rather the principle that variable declaration must always have a type.
     - Compare this with dynamic typing in Python.
+    > Note: This does not refer to the "static" keyword in declaration but rather the principle that variable declaration must always have a type.
 
 3. **Memory Management**
     - Explain how C++ provides direct control over memory allocation and deallocation.

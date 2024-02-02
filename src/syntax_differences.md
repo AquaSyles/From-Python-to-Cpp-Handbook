@@ -40,7 +40,6 @@ Python emphasizes readability and enforces code indentation for structure. C++, 
 Python:
 
 ```python
-Copy code
 if x > 0:
     print("Positive")
 else:
@@ -50,7 +49,6 @@ else:
 C++:
 
 ```cpp
-Copy code
 if (x > 0) {
     cout << "Positive" << endl;
 } else {
@@ -58,7 +56,9 @@ if (x > 0) {
 }
 ```
 
-The use of braces {} in C++ is essential for delimiting code blocks. It's worth noting that unlike Python, C++ is less strict about indentation rules. For instance, the C++ code can be formatted differently without affecting its functionality:
+In C++, the use of curly braces {} is crucial for delimiting code blocks, defining what is known as the scope. Unlike Python, C++ is less strict about indentation rules; however, maintaining consistent indentation is recommended for readability.
+
+The scope, delineated by curly braces, determines the boundaries of a block of code in C++.
 
 ```cpp
 if (x > 0)

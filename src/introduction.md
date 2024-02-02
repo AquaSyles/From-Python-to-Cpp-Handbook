@@ -32,7 +32,7 @@ The "From Python to C++" handbook is a comprehensive guide designed for Python d
 ## 1. Syntax Differences
 - Understand and navigate syntax disparities between Python and C++, including variable declaration, function definition, and overall code style.
 
-## 2. Static Type System
+## 2. Static Typing
 - Grasp C++'s static typing approach, requiring explicit variable type declarations.
 - Compare with Python's dynamic typing.
 
@@ -44,7 +44,7 @@ The "From Python to C++" handbook is a comprehensive guide designed for Python d
 - Learn fundamental OOP concepts in C++, including classes, constructors, inheritance, and polymorphism.
 
 ## 5. Standard Template Library (STL)
-- Uncover the power of STL, C++'s standard library, and its pre-defined classes and functions for handling complex data structures and algorithms.
+- Uncover the power of STL, C++'s standard library, and its pre-defined classes and functions for handling complex data structures and algorithms.stat
 
 ## 6. Error Handling ???
 - Understand error handling in C++ without built-in exception support. ?
