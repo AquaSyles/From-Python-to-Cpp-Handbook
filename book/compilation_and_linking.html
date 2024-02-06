@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="description.html">Description</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook - From Python to C++</li><li class="chapter-item expanded "><a href="syntax_differences.html"><strong aria-hidden="true">1.</strong> Syntax Differences</a></li><li class="chapter-item expanded "><a href="static_typing.html"><strong aria-hidden="true">2.</strong> Static Typing</a></li><li class="chapter-item expanded "><a href="memory_management.html"><strong aria-hidden="true">3.</strong> Memory Management</a></li><li class="chapter-item expanded "><a href="oop.html"><strong aria-hidden="true">4.</strong> Object-Oriented Programming (OOP)</a></li><li class="chapter-item expanded "><a href="stl.html"><strong aria-hidden="true">5.</strong> Standard Template Library (STL)</a></li><li class="chapter-item expanded "><a href="error_handling.html"><strong aria-hidden="true">6.</strong> Error Handling</a></li><li class="chapter-item expanded "><a href="compilation_and_linking.html" class="active"><strong aria-hidden="true">7.</strong> Compilation and Linking</a></li><li class="chapter-item expanded "><a href="dll_files.html"><strong aria-hidden="true">8.</strong> DLL Files (Windows)</a></li><li class="chapter-item expanded "><a href="cpu_architectures.html"><strong aria-hidden="true">9.</strong> Compilation for Different CPU Architectures</a></li><li class="chapter-item expanded "><a href="performance.html"><strong aria-hidden="true">10.</strong> Performance</a></li><li class="chapter-item expanded "><a href="different_ways.html"><strong aria-hidden="true">11.</strong> Different Ways of Doing Things</a></li><li class="chapter-item expanded "><a href="cheat_sheet.html"><strong aria-hidden="true">12.</strong> Cheat Sheet</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="description.html">Description</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook - From Python to C++</li><li class="chapter-item expanded "><a href="syntax_differences.html"><strong aria-hidden="true">1.</strong> Syntax Differences</a></li><li class="chapter-item expanded "><a href="static_typing.html"><strong aria-hidden="true">2.</strong> Static Typing</a></li><li class="chapter-item expanded "><a href="memory_management.html"><strong aria-hidden="true">3.</strong> Memory Management</a></li><li class="chapter-item expanded "><a href="oop.html"><strong aria-hidden="true">4.</strong> Object-Oriented Programming (OOP)</a></li><li class="chapter-item expanded "><a href="stl.html"><strong aria-hidden="true">5.</strong> Standard Template Library (STL)</a></li><li class="chapter-item expanded "><a href="compilation_and_linking.html" class="active"><strong aria-hidden="true">6.</strong> Compilation and Linking</a></li><li class="chapter-item expanded "><a href="error_handling.html"><strong aria-hidden="true">7.</strong> Error Handling</a></li><li class="chapter-item expanded "><a href="dll_files.html"><strong aria-hidden="true">8.</strong> DLL Files</a></li><li class="chapter-item expanded "><a href="cpu_architectures.html"><strong aria-hidden="true">9.</strong> Compilation for Different CPU Architectures</a></li><li class="chapter-item expanded "><a href="performance.html"><strong aria-hidden="true">10.</strong> Performance</a></li><li class="chapter-item expanded "><a href="different_ways.html"><strong aria-hidden="true">11.</strong> Different Ways of Doing Things</a></li><li class="chapter-item expanded "><a href="cheat_sheet.html"><strong aria-hidden="true">12.</strong> Cheat Sheet</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,10 +173,10 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="7-compilation-and-linking"><a class="header" href="#7-compilation-and-linking">7. Compilation and Linking</a></h1>
+                        <h1 id="6-compilation-and-linking"><a class="header" href="#6-compilation-and-linking">6. Compilation and Linking</a></h1>
 <p>In C++, the process of transforming human-readable code into a runnable program involves two primary phases: compilation and linking. This differs notably from Python's more dynamic approach to code execution.</p>
 <p><strong>Compilation Process in C++:</strong></p>
-<h2 id="1-preprocessing"><a class="header" href="#1-preprocessing">1. Preprocessing:</a></h2>
+<h2 id="61-preprocessing"><a class="header" href="#61-preprocessing">6.1 Preprocessing:</a></h2>
 <p>C++ Approach:</p>
 <ul>
 <li>
@@ -188,7 +188,7 @@ It essentially prepares the code for the subsequent stages by resolving dependen
 Python doesn't have a distinct preprocessing phase; it handles code import and execution dynamically during runtime.</p>
 </li>
 </ul>
-<h2 id="2-compilation"><a class="header" href="#2-compilation">2. Compilation:</a></h2>
+<h2 id="62-compilation"><a class="header" href="#62-compilation">6.2 Compilation:</a></h2>
 <ul>
 <li>
 <p>C++ Approach:
@@ -200,7 +200,7 @@ Syntax errors are checked, and the code is converted into a format that the comp
 Python skips this compilation step; instead, it interprets and executes code on-the-fly without a prior translation into machine code.</p>
 </li>
 </ul>
-<h2 id="3-object-files"><a class="header" href="#3-object-files">3. Object Files:</a></h2>
+<h2 id="63-object-files"><a class="header" href="#63-object-files">6.3 Object Files:</a></h2>
 <ul>
 <li>
 <p>C++ Approach:
@@ -213,7 +213,7 @@ Python doesn't generate separate object files; it directly uses or interprets th
 Linking Process in C++</p>
 </li>
 </ul>
-<h2 id="1-static-linking"><a class="header" href="#1-static-linking">1. Static Linking:</a></h2>
+<h2 id="64-static-linking"><a class="header" href="#64-static-linking">6.4 Static Linking:</a></h2>
 <ul>
 <li>
 <p>C++ Approach:
@@ -225,7 +225,7 @@ It resolves references to functions and variables during this process.</p>
 Unlike C++, Python doesn't have a static linking phase, and the linking of libraries is done dynamically during runtime.</p>
 </li>
 </ul>
-<h2 id="2-dynamic-linking"><a class="header" href="#2-dynamic-linking">2. Dynamic Linking:</a></h2>
+<h2 id="65-dynamic-linking"><a class="header" href="#65-dynamic-linking">6.5 Dynamic Linking:</a></h2>
 <ul>
 <li>C++ Approach:
 If the program uses external libraries, dynamic linking occurs at runtime, linking the executable to these libraries.
@@ -233,37 +233,33 @@ The actual linking takes place when the program is loaded into memory.</li>
 <li>Comparison with Python:
 Python also employs dynamic linking for modules, but the process is more implicit compared to C++.</li>
 </ul>
-<h2 id="3-linkage-errors"><a class="header" href="#3-linkage-errors">3. Linkage Errors:</a></h2>
+<h2 id="66-compilation-errors"><a class="header" href="#66-compilation-errors">6.6 Compilation Errors:</a></h2>
+<ul>
+<li>
+<p>Compilation errors include syntax, type, and declaration errors. Syntax errors violate language rules, type errors involve incompatible data types, and declaration errors stem from issues with variable or function declarations.</p>
+</li>
+<li>
+<p>Linkage errors during linking stem from unresolved references or conflicts, like when the linker can't find the implementation or faces multiple definitions. Resolution in both compilation and linking is essential for a functional executable.</p>
+</li>
+</ul>
+<h2 id="67-executable-generation"><a class="header" href="#67-executable-generation">6.7 Executable Generation:</a></h2>
 <ul>
 <li>C++ Approach:
-Linker errors may occur if there are unresolved references or conflicts during the linking phase.
-These issues need resolution before obtaining a functional executable.</li>
-<li>Comparison with Python:
-Python resolves names and bindings dynamically at runtime, often detecting linkage issues during program execution.</li>
-</ul>
-<h2 id="4-executable-generation"><a class="header" href="#4-executable-generation">4. Executable Generation:</a></h2>
-<ul>
-<li>
-<p>C++ Approach:
 The linker produces the final, fully-assembled executable file ready for independent execution.
 Comparison with Python:
-In Python, there's no separate linking step; the script is executed directly or converted to bytecode (.pyc) for subsequent runs.</p>
-</li>
-<li>
-<p>Python Comparison
-Understanding the intricacies of the compilation and linking process in C++ provides Python developers insights into the fundamental differences between the compiled and interpreted approaches, shedding light on the behind-the-scenes workings of compiled languages. Python, with its dynamic nature, handles many of these processes at runtime, offering simplicity at the cost of potential performance differences compared to C++.</p>
-</li>
+In Python, there's no separate linking step; the script is executed directly or converted to bytecode (.pyc) for subsequent runs.</li>
 </ul>
+<p>Understanding the intricacies of the compilation and linking process in C++ provides Python developers insights into the fundamental differences between the compiled and interpreted approaches, shedding light on the behind-the-scenes workings of compiled languages. Python, with its dynamic nature, handles many of these processes at runtime, offering simplicity at the cost of potential performance differences compared to C++.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="error_handling.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="stl.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="dll_files.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="error_handling.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -273,17 +269,33 @@ Understanding the intricacies of the compilation and linking process in C++ prov
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="error_handling.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="stl.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="dll_files.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="error_handling.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

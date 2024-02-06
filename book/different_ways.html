@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="description.html">Description</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook - From Python to C++</li><li class="chapter-item expanded "><a href="syntax_differences.html"><strong aria-hidden="true">1.</strong> Syntax Differences</a></li><li class="chapter-item expanded "><a href="static_typing.html"><strong aria-hidden="true">2.</strong> Static Typing</a></li><li class="chapter-item expanded "><a href="memory_management.html"><strong aria-hidden="true">3.</strong> Memory Management</a></li><li class="chapter-item expanded "><a href="oop.html"><strong aria-hidden="true">4.</strong> Object-Oriented Programming (OOP)</a></li><li class="chapter-item expanded "><a href="stl.html"><strong aria-hidden="true">5.</strong> Standard Template Library (STL)</a></li><li class="chapter-item expanded "><a href="error_handling.html"><strong aria-hidden="true">6.</strong> Error Handling</a></li><li class="chapter-item expanded "><a href="compilation_and_linking.html"><strong aria-hidden="true">7.</strong> Compilation and Linking</a></li><li class="chapter-item expanded "><a href="dll_files.html"><strong aria-hidden="true">8.</strong> DLL Files (Windows)</a></li><li class="chapter-item expanded "><a href="cpu_architectures.html"><strong aria-hidden="true">9.</strong> Compilation for Different CPU Architectures</a></li><li class="chapter-item expanded "><a href="performance.html"><strong aria-hidden="true">10.</strong> Performance</a></li><li class="chapter-item expanded "><a href="different_ways.html" class="active"><strong aria-hidden="true">11.</strong> Different Ways of Doing Things</a></li><li class="chapter-item expanded "><a href="cheat_sheet.html"><strong aria-hidden="true">12.</strong> Cheat Sheet</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="description.html">Description</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook - From Python to C++</li><li class="chapter-item expanded "><a href="syntax_differences.html"><strong aria-hidden="true">1.</strong> Syntax Differences</a></li><li class="chapter-item expanded "><a href="static_typing.html"><strong aria-hidden="true">2.</strong> Static Typing</a></li><li class="chapter-item expanded "><a href="memory_management.html"><strong aria-hidden="true">3.</strong> Memory Management</a></li><li class="chapter-item expanded "><a href="oop.html"><strong aria-hidden="true">4.</strong> Object-Oriented Programming (OOP)</a></li><li class="chapter-item expanded "><a href="stl.html"><strong aria-hidden="true">5.</strong> Standard Template Library (STL)</a></li><li class="chapter-item expanded "><a href="compilation_and_linking.html"><strong aria-hidden="true">6.</strong> Compilation and Linking</a></li><li class="chapter-item expanded "><a href="error_handling.html"><strong aria-hidden="true">7.</strong> Error Handling</a></li><li class="chapter-item expanded "><a href="dll_files.html"><strong aria-hidden="true">8.</strong> DLL Files</a></li><li class="chapter-item expanded "><a href="cpu_architectures.html"><strong aria-hidden="true">9.</strong> Compilation for Different CPU Architectures</a></li><li class="chapter-item expanded "><a href="performance.html"><strong aria-hidden="true">10.</strong> Performance</a></li><li class="chapter-item expanded "><a href="different_ways.html" class="active"><strong aria-hidden="true">11.</strong> Different Ways of Doing Things</a></li><li class="chapter-item expanded "><a href="cheat_sheet.html"><strong aria-hidden="true">12.</strong> Cheat Sheet</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -174,6 +174,133 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="11-different-ways-of-doing-things"><a class="header" href="#11-different-ways-of-doing-things">11. Different Ways of Doing Things</a></h1>
+<h2 id="111-input-and-output"><a class="header" href="#111-input-and-output">11.1 <strong>Input and Output:</strong></a></h2>
+<p>In Python, the <code>input()</code> function is commonly used to get user input, and <code>print()</code> handles output. In C++, <code>cin</code> is used for input, and <code>cout</code> for output.</p>
+<pre><code class="language-python"># Python
+user_input = input(&quot;Enter something: &quot;)
+print(&quot;You entered:&quot;, user_input)
+</code></pre>
+<pre><code class="language-cpp">// C++
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    string user_input;
+    cout &lt;&lt; &quot;Enter something: &quot;;
+    cin &gt;&gt; user_input;
+    cout &lt;&lt; &quot;You entered: &quot; &lt;&lt; user_input &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h2 id="112-string-handling"><a class="header" href="#112-string-handling">11.2 <strong>String Handling:</strong></a></h2>
+<p>Python strings are dynamic, allowing easy concatenation and manipulation. C++ uses the <code>+</code> operator for string concatenation but requires caution with memory management.</p>
+<pre><code class="language-python"># Python
+string1 = &quot;Hello&quot;
+string2 = &quot;World&quot;
+result = string1 + &quot; &quot; + string2
+</code></pre>
+<pre><code class="language-cpp">// C++
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string string1 = &quot;Hello&quot;;
+    string string2 = &quot;World&quot;;
+    string result = string1 + &quot; &quot; + string2;
+    return 0;
+}
+</code></pre>
+<h2 id="113-arrays-and-lists"><a class="header" href="#113-arrays-and-lists">11.3 <strong>Arrays and Lists:</strong></a></h2>
+<p>Python lists are dynamic arrays, while C++ arrays have a fixed size. C++ offers dynamic arrays using built-in classes/STL containers like <code>vector</code>.</p>
+<pre><code class="language-python"># Python
+my_list = [1, 2, 3]
+</code></pre>
+<pre><code class="language-cpp">// C++
+int my_array[3] = {1, 2, 3};
+// OR
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; my_vector = {1, 2, 3};
+    return 0;
+}
+</code></pre>
+<h2 id="114-function-overloading"><a class="header" href="#114-function-overloading">11.4 <strong>Function Overloading:</strong></a></h2>
+<p>While Python supports function overloading based on default values, C++ allows for explicit overloading using different parameter types.</p>
+<pre><code class="language-python"># Python
+def greet(name, greeting=&quot;Hello&quot;):
+    print(greeting, name)
+</code></pre>
+<pre><code class="language-cpp">// C++
+#include &lt;iostream&gt;
+using namespace std;
+
+void greet(string name) {
+    cout &lt;&lt; &quot;Hello &quot; &lt;&lt; name &lt;&lt; endl;
+}
+
+void greet(string name, string greeting) {
+    cout &lt;&lt; greeting &lt;&lt; &quot; &quot; &lt;&lt; name &lt;&lt; endl;
+}
+
+int main() {
+    greet(&quot;John&quot;);
+    greet(&quot;Jane&quot;, &quot;Hi&quot;);
+    return 0;
+}
+</code></pre>
+<h2 id="115-memory-management"><a class="header" href="#115-memory-management">11.5 <strong>Memory Management:</strong></a></h2>
+<p>C++ requires manual memory management using <code>new</code> and <code>delete</code> for dynamic memory, unlike Python, which has automatic garbage collection.</p>
+<pre><code class="language-cpp">// C++
+int* dynamic_variable = new int;
+*dynamic_variable = 42;
+delete dynamic_variable;
+</code></pre>
+<h2 id="116-pointers"><a class="header" href="#116-pointers">11.6 <strong>Pointers:</strong></a></h2>
+<p>C++ introduces pointers, allowing direct memory manipulation and more efficient resource handling. Pointers store memory addresses, enabling dynamic memory allocation and deallocation.</p>
+<pre><code class="language-cpp">// C++
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int* dynamic_variable = new int;  // Allocate memory
+    *dynamic_variable = 42;           // Assign value
+    cout &lt;&lt; &quot;Value: &quot; &lt;&lt; *dynamic_variable &lt;&lt; endl;
+    delete dynamic_variable;          // Deallocate memory
+    return 0;
+}
+</code></pre>
+<p>In Python, direct memory manipulation is abstracted, and variables act as references. Memory management is automatic, handled by the interpreter.</p>
+<pre><code class="language-python"># Python
+dynamic_variable = 42  # No explicit memory allocation
+print(&quot;Value:&quot;, dynamic_variable)
+</code></pre>
+<p>Pointers in C++ provide fine-grained control over memory, beneficial for optimizing performance but require careful handling to avoid any potential errors.</p>
+<h2 id="117-templates"><a class="header" href="#117-templates">11.7 <strong>Templates:</strong></a></h2>
+<p>C++ introduces templates, a very powerful feature allowing generic programming. Templates enable writing functions or classes that work with various data types without code duplication.</p>
+<pre><code class="language-cpp">// C++
+#include &lt;iostream&gt;
+using namespace std;
+
+// Function template
+template &lt;typename T&gt;
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    int result_int = add(5, 7);
+    cout &lt;&lt; &quot;Sum of integers: &quot; &lt;&lt; result_int &lt;&lt; endl;
+
+    double result_double = add(3.5, 2.8);
+    cout &lt;&lt; &quot;Sum of doubles: &quot; &lt;&lt; result_double &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
+<p>These examples highlight key differences in common programming tasks between Python and C++</p>
+<p>In summary, if simplicity, readability, and quick development are paramount, Python may be preferable. However, for projects demanding maximum control, performance optimization, and efficient resource utilization, C++ stands out as the best choice.</p>
 
                     </main>
 
@@ -204,6 +331,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

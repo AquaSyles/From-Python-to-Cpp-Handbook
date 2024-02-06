@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="description.html">Description</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook - From Python to C++</li><li class="chapter-item expanded "><a href="syntax_differences.html"><strong aria-hidden="true">1.</strong> Syntax Differences</a></li><li class="chapter-item expanded "><a href="static_typing.html"><strong aria-hidden="true">2.</strong> Static Typing</a></li><li class="chapter-item expanded "><a href="memory_management.html"><strong aria-hidden="true">3.</strong> Memory Management</a></li><li class="chapter-item expanded "><a href="oop.html"><strong aria-hidden="true">4.</strong> Object-Oriented Programming (OOP)</a></li><li class="chapter-item expanded "><a href="stl.html"><strong aria-hidden="true">5.</strong> Standard Template Library (STL)</a></li><li class="chapter-item expanded "><a href="error_handling.html" class="active"><strong aria-hidden="true">6.</strong> Error Handling</a></li><li class="chapter-item expanded "><a href="compilation_and_linking.html"><strong aria-hidden="true">7.</strong> Compilation and Linking</a></li><li class="chapter-item expanded "><a href="dll_files.html"><strong aria-hidden="true">8.</strong> DLL Files (Windows)</a></li><li class="chapter-item expanded "><a href="cpu_architectures.html"><strong aria-hidden="true">9.</strong> Compilation for Different CPU Architectures</a></li><li class="chapter-item expanded "><a href="performance.html"><strong aria-hidden="true">10.</strong> Performance</a></li><li class="chapter-item expanded "><a href="different_ways.html"><strong aria-hidden="true">11.</strong> Different Ways of Doing Things</a></li><li class="chapter-item expanded "><a href="cheat_sheet.html"><strong aria-hidden="true">12.</strong> Cheat Sheet</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="description.html">Description</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook - From Python to C++</li><li class="chapter-item expanded "><a href="syntax_differences.html"><strong aria-hidden="true">1.</strong> Syntax Differences</a></li><li class="chapter-item expanded "><a href="static_typing.html"><strong aria-hidden="true">2.</strong> Static Typing</a></li><li class="chapter-item expanded "><a href="memory_management.html"><strong aria-hidden="true">3.</strong> Memory Management</a></li><li class="chapter-item expanded "><a href="oop.html"><strong aria-hidden="true">4.</strong> Object-Oriented Programming (OOP)</a></li><li class="chapter-item expanded "><a href="stl.html"><strong aria-hidden="true">5.</strong> Standard Template Library (STL)</a></li><li class="chapter-item expanded "><a href="compilation_and_linking.html"><strong aria-hidden="true">6.</strong> Compilation and Linking</a></li><li class="chapter-item expanded "><a href="error_handling.html" class="active"><strong aria-hidden="true">7.</strong> Error Handling</a></li><li class="chapter-item expanded "><a href="dll_files.html"><strong aria-hidden="true">8.</strong> DLL Files</a></li><li class="chapter-item expanded "><a href="cpu_architectures.html"><strong aria-hidden="true">9.</strong> Compilation for Different CPU Architectures</a></li><li class="chapter-item expanded "><a href="performance.html"><strong aria-hidden="true">10.</strong> Performance</a></li><li class="chapter-item expanded "><a href="different_ways.html"><strong aria-hidden="true">11.</strong> Different Ways of Doing Things</a></li><li class="chapter-item expanded "><a href="cheat_sheet.html"><strong aria-hidden="true">12.</strong> Cheat Sheet</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,17 +173,100 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="6-error-handling"><a class="header" href="#6-error-handling">6. Error Handling</a></h1>
+                        <h1 id="7-error-handling"><a class="header" href="#7-error-handling">7. Error Handling</a></h1>
+<p>Error handling in C++ differs significantly from Python, especially considering C++ lacks built-in exception support. As a beginner transitioning from Python, understanding the methods of error handling in C++ is crucial for writing robust and reliable code.</p>
+<h2 id="71-no-built-in-exceptions"><a class="header" href="#71-no-built-in-exceptions">7.1 No Built-in Exceptions</a></h2>
+<p>Unlike Python, C++ does not have built-in exception handling using keywords like <code>try</code>, <code>except</code>, and <code>finally</code>. Instead, error handling in C++ often involves alternative approaches.</p>
+<h2 id="72-return-codes-and-statements"><a class="header" href="#72-return-codes-and-statements">7.2 Return Codes and Statements</a></h2>
+<p>One common method is using return codes or statements to indicate the success or failure of a function. A function can return a specific value, usually an integer, to signal whether the operation was successful or encountered an error.</p>
+<p>Example:</p>
+<pre><code class="language-cpp">int divide(int a, int b) {
+    if (b == 0) {
+        // Return an error code
+        return -1;
+    }
+    return a / b;
+}
+</code></pre>
+<p>In this example, the function divide returns -1 if the divisor b is zero, indicating a potential division by zero error.</p>
+<h2 id="73-debugging-techniques"><a class="header" href="#73-debugging-techniques">7.3 Debugging Techniques</a></h2>
+<p>For beginners, debugging tools become invaluable for identifying and fixing errors in C++ code. Utilize Integrated Development Environments (IDEs) like Visual Studio, Code::Blocks, or CLion, which offer powerful debugging features.</p>
+<p><strong>Using a Debugger:</strong></p>
+<ul>
+<li>Set Breakpoints: Place breakpoints in your code at points where you suspect issues or want to inspect variables.</li>
+<li>Step Through Code: Use the debugger to step through the code line by line, observing variable values and program flow.</li>
+<li>Inspect Variables: Examine the values of variables during runtime to identify unexpected or incorrect values.</li>
+<li>Watch Expressions: Set up watch expressions to monitor specific variables and expressions during debugging.</li>
+</ul>
+<h2 id="74-logging-and-output"><a class="header" href="#74-logging-and-output">7.4 Logging and Output</a></h2>
+<p>Similarly, logging can also be a useful technique to output information about the program's execution. Use std::cout statements to print messages at different stages of the program, providing insights into the flow and identifying potential errors.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-md">#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; &quot;Program start&quot; &lt;&lt; std::endl;
+
+    // Your code here
+
+    std::cout &lt;&lt; &quot;Program end&quot; &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+<h2 id="75-compilation-and-linking"><a class="header" href="#75-compilation-and-linking">7.5 Compilation and Linking</a></h2>
+<p>A quick summary from chapter 6:</p>
+<p><strong>Compilation</strong> in C++ involves translating source code into machine-executable code. The compiler checks for syntax errors and generates object files (<code>.obj</code> or <code>.o</code>) with low-level instructions.</p>
+<p><strong>Linking</strong> combines object files and libraries into a single executable file. The linker resolves references between program parts, ensuring functions and variables are correctly connected.</p>
+<h3 id="detecting-compilation-and-linking-errors"><a class="header" href="#detecting-compilation-and-linking-errors">Detecting Compilation and Linking Errors</a></h3>
+<ol>
+<li>
+<p><strong>Compilation Errors:</strong></p>
+<ul>
+<li>Occur during code translation.</li>
+<li>Common issues include syntax errors and undeclared variables.</li>
+<li>Check compiler output for error messages and line numbers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Linking Errors:</strong></p>
+<ul>
+<li>Arise when combining object files.</li>
+<li>Common errors include undefined references.</li>
+<li>Review linker messages for unresolved symbols.</li>
+</ul>
+</li>
+</ol>
+<h3 id="using-compilation-and-linking-output"><a class="header" href="#using-compilation-and-linking-output">Using Compilation and Linking Output</a></h3>
+<ol>
+<li>
+<p><strong>Compiler Output:</strong></p>
+<ul>
+<li>Inspect for syntax errors and code-related issues.</li>
+<li>Address errors indicated by line numbers in the source code.</li>
+</ul>
+</li>
+<li>
+<p><strong>Linker Output:</strong></p>
+<ul>
+<li>Review messages for unresolved symbols.</li>
+<li>Ensure all necessary files are included in the linking command.</li>
+</ul>
+</li>
+</ol>
+<p>Understanding compilation and linking distinctions helps pinpoint errors in C++ code. Compiler messages reveal code-related issues, while linker messages expose problems with symbol resolution and connections between program parts.</p>
+<h2 id="76-external-libraries-for-exception-handling"><a class="header" href="#76-external-libraries-for-exception-handling">7.6 External Libraries for Exception Handling</a></h2>
+<p>While not covered in detail in this handbook, there are external libraries in C++ that provide exception handling capabilities similar to Python. However, it's recommended for beginners to first understand the basics of C++ error handling before exploring these libraries.</p>
+<p>In summary, error handling in C++ involves a combination of return codes, debugging techniques, logging, and, optionally, external libraries. Embrace the learning curve, leverage debugging tools, and gradually become proficient in identifying and resolving errors in your C++ code.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="stl.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="compilation_and_linking.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="compilation_and_linking.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="dll_files.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -193,17 +276,33 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="stl.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="compilation_and_linking.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="compilation_and_linking.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="dll_files.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
