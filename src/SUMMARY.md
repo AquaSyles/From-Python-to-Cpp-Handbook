@@ -1,6 +1,5 @@
 # Summary
 
-[Description](description.md)
 [Introduction](introduction.md)
 
 # Handbook - From Python to C++
@@ -17,3 +16,6 @@
 - [Performance](performance.md)
 - [Different Ways of Doing Things](different_ways.md)
 - [Cheat Sheet](cheat_sheet.md)
+
+---
+[Making a Basic Game Application (Optional)](game_app.md)
